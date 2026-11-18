@@ -1,0 +1,15 @@
+# Quote Vault. Install with: .venv/bin/pip install -r requirements.txt
+fastapi
+uvicorn
+python-multipart      # audio upload for voice input
+httpx
+pyyaml
+rapidfuzz
+ddgs                  # keyless web search (DuckDuckGo)
+mlx-whisper           # speech to text on Apple Silicon
+pywebview             # desktop window for Quote Vault.app
+turkish-deasciifier @ git+https://github.com/emres/turkish-deasciifier   # restores Turkish letters by rule
+
+# For development only
+pytest
+playwright            # drives Chrome for interface checks; uses the installed Chrome

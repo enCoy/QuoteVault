@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quote Vault</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Quote Vault">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#eadfc8">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply the saved theme before the first paint.
+    try { const t = localStorage.getItem("qv-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="#/new">Quote Vault</a>
+    <nav>
+      <a href="#/new" data-nav="new">New card</a>
+      <a href="#/library" data-nav="library">Library</a>
+      <a href="#/tags" data-nav="tags">Tags</a>
+      <a href="#/shuffle" data-nav="shuffle">Shuffle</a>
+    </nav>
+    <form class="search" id="search" role="search">
+      <input type="search" name="q" placeholder="Search" aria-label="Search quotes" autocomplete="off">
+    </form>
+    <button class="icon-btn" id="theme" type="button" title="Switch light / dark" aria-label="Switch light or dark theme">◐</button>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <div id="toasts" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
